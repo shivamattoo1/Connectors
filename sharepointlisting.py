@@ -19,7 +19,7 @@ def list_files_and_metadata(site_url, username, password):
             # Iterate through the files and print their metadata
             for file in files:
                 file_properties = file.properties
-                print("File Name:", file_properties)
+                print("File Properties:", file_properties)
                 print()
         else:
             print("Failed to authenticate with SharePoint")

@@ -28,6 +28,11 @@ def list_files_and_metadata(site_url, username, password, folder_url):
                 print("File Size:", file_properties["Length"])
                 print("File Created:", file_properties["TimeCreated"])
                 print("File Modified:", file_properties["TimeLastModified"])
+                print("Custom Metadata:")
+                for key, value in file_properties.items():
+                    if key != "Name" and key != "ServerRelativeUrl" and key != "Length" and key != "TimeCreated" and key != "TimeLastModified":
+                        print(f"{key}: {value}")
+                print()
                 print()
         else:
             print("Failed to authenticate with SharePoint")
